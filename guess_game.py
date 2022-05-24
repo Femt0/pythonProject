@@ -2,7 +2,10 @@ from random import randint
 
 
 def is_valid():
-    return 1 <= int(n) <= 100
+    try:
+        return 1 <= int(n) <= 100
+    except ValueError:
+        return False
 
 
 secret_number = randint(1, 100)
@@ -60,4 +63,4 @@ while True:
         elif int(n) > secret_number:
             print('Слишком много, попробуйте еще раз')
     else:
-        print('Введите число от 1 до 100')
+        print('Допускаются только цифры от 1 до 100')
